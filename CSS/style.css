@@ -250,8 +250,11 @@ body {
 }
 
 .GALLERY-wrap {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+}
+
+.lb-data .lb-number {
+    display: none !important;
 }
 
 /* EVENT
@@ -604,6 +607,11 @@ iframe {
         width: 142.2px;
         height: 45px;
         padding: 0;
+    }
+
+    .GALLERY-wrap  > img {
+        max-width: 100%;
+        width: 375px;
     }
 
     /* #EVENT */

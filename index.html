@@ -11,12 +11,14 @@
     <!-- slickのCSS-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="css/lightbox.min.css">
 
     <link rel="stylesheet" href="CSS/style.css">
 
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/lightbox.min.js"></script>
 </head>
 
 <body>
@@ -140,12 +142,24 @@
             <img src="images/gallery@2x.png" alt="ギャラリー" class="GALLERY-logo">
         </h2>
         
-        <div class="GALLERY-wrap">
-            <img src="images/pc_gallary_01-100.jpg" alt="">
-            <img src="images/pc_gallary_02-100.jpg" alt="">
-            <img src="images/pc_gallary_03-100.jpg" alt="">
-            <img src="images/pc_gallary_04-100.jpg" alt="">
-            <img src="images/pc_gallary_05-100.jpg" alt="">
+        <div class="GALLERY-wrap GALLERY-slider">
+            <span><a href="images/pc_gallary_01-100.jpg" data-lightbox="img01" data-title="コーヒー">
+                <img src="images/pc_gallary_01-100.jpg" alt="コーヒー"></a></span>
+
+            <a href="images/pc_gallary_02-100.jpg" data-lightbox="img01" data-title="店内の内装">
+                <img src="images/pc_gallary_02-100.jpg" alt="店内の内装"></a>
+
+            <a href="images/pc_gallary_03-100.jpg" data-lightbox="img01" data-title="店内の内装2">
+                <img src="images/pc_gallary_03-100.jpg" alt="店内の内装2"></a>
+
+            <a href="images/pc_gallary_04-100.jpg" data-lightbox="img01" data-title="当店で使用している豆">
+                <img src="images/pc_gallary_04-100.jpg" alt="当店で使用している豆"></a>
+
+            <a href="images/pc_gallary_05-100.jpg" data-lightbox="img01" data-title="普段の様子">
+                <img src="images/pc_gallary_05-100.jpg" alt="普段の様子"></a>
+
+            <a href="images/pc_gallary_01-100.jpg" data-lightbox="img01" data-title="コーヒー">
+                <img src="images/pc_gallary_01-100.jpg" alt="コーヒー"></a>
         </div><!-- .GALLERY-wrap -->
     </section><!-- #GALLERY-->
 
@@ -224,6 +238,36 @@
                 autoplay: true,
                 autoplaySpeed: 2000,
                 arrows: false
+            });
+
+            $(".GALLERY-slider").slick({
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: false,
+                cssEase: "linear",
+                slidesToShow: 5,
+                pauseOnFoucus: false,
+                pauseOnHover: false,
+
+                responsive: [{
+                    breakpoint: 1100,
+                    settings: {
+                        slidesToShow: 4
+                    }
+            },
+                {
+                    breakpoint: 757,
+                    settings: {
+                        slidesToShow: 2
+                }
+            },
+                {
+                breakpoint: 376, 
+                settings: {
+                    slidesToShow: 1,
+                }
+            },
+            ]
             });
         });
     </script>
