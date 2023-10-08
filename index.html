@@ -227,9 +227,13 @@
         $(function(){
 
             // humburger
-            $(".humburger").on("click", function(){
-                $(".sp-menu").fadeToggle(100);
-                $(".humburger").toggleClass("open");
+            // $(".humburger").on("click", function(){
+            //     $(".sp-menu").fadeToggle(100);
+            //     $(".humburger").toggleClass("open");
+            // });
+            $('.humburger,.sp-menu a').on('click', function () {
+                $('.sp-menu').fadeToggle(100);
+                $('.humburger').toggleClass('open')
             });
 
             // slider
